@@ -1,0 +1,13 @@
+apply plugin: 'java-library'
+apply from: '../config/dependencies.gradle'
+
+dependencies {
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation squareUpDependencies.javapoet
+  implementation autoValueDependencies.auto
+  compileOnly autoValueDependencies.service
+  implementation autoValueDependencies.common
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
